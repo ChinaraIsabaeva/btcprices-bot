@@ -1,0 +1,1 @@
+web: gunicorn bottasks.bottasks:app --log-file=-
