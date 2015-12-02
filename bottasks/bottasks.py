@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    print "Syasha ne prav"
     return 'Hello chee-bot'
 
 @app.route('/updates/')
