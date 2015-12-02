@@ -11,15 +11,17 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
+@app.route('/updates/')
+def last_updated(data):
+    return data
+
 @app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
 def webhook():
     if request.method == 'POST':
         data = request.data
         return redirect(url_for('updates'), data)
 
-@app.route('/updates')
-def last_updated(data):
-    return data
+
     
         
 if __name__ == '__main__':
