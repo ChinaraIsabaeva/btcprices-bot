@@ -10,7 +10,11 @@ def home():
 
 @app.route('/getUpdates/', methods=['POST'])
 def get_updates():
-    return ''
+    try:
+        return ''
+    except Exception:
+        print Exception.message
+        
 
 
 if __name__ == '__main__':
