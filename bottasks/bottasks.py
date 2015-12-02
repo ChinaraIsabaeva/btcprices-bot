@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates/', methods=['POST'])
+@app.route('/getUpdates/', methods=['GET', 'POST'])
 def get_updates():
     if request.args.post('token') == os.environ['TOKEN']:
         return ''
