@@ -11,7 +11,7 @@ def home():
 @app.route('/getUpdates/', methods=['GET'])
 def get_updates():
     try:
-        return ''
+        return Response
     except Exception:
         print Exception.message
         
