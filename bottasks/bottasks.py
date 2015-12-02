@@ -14,7 +14,7 @@ def home():
 @app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
 def webhook():
     if request.method == 'POST':
-        return request.data
+        return request.headers
     else:
         return 'It was get request'
         
