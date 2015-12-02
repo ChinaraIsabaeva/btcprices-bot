@@ -12,9 +12,9 @@ def home():
     return 'Hello chee-bot'
 
 @app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
-def get_updates():
+def webhook():
     if request.method == 'POST':
-        return Response.data
+        return request.data
     else:
         return 'It was ge request'
         
