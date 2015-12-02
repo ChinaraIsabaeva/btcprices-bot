@@ -1,6 +1,6 @@
 import os, json
 
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def home():
 @app.route('/getUpdates/', methods=['POST'])
 def get_updates():
     try:
-        return request
+        return request.data
     except Exception:
         print Exception.message
         
