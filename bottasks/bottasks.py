@@ -14,7 +14,6 @@ def home():
 @app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
 def get_updates():
     if request.method == 'POST':
-        data = request.get_json(force=True)
         return 'OK'
     else:
         return 'It was ge request'
