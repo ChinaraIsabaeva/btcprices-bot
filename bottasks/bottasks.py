@@ -18,7 +18,7 @@ def last_updated(data):
 
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
-    print "Eto post zapros"
+    print request.data
 
 
     
