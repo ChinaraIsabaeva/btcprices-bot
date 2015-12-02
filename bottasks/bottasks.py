@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, Response
+from flask import Flask
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def home():
 @app.route('/getUpdates/', methods=['GET'])
 def get_updates():
     try:
-        return Response
+        return request
     except Exception:
         print Exception.message
         
