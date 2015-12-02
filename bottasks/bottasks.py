@@ -11,7 +11,7 @@ def home():
 @app.route('/getUpdates/', methods=['POST'])
 def get_updates():
     try:
-        data = json.loads(request.data)
+        data = json.loads(request)
         print data
         return 'OK'
     except Exception:
