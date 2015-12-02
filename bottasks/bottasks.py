@@ -1,6 +1,6 @@
 import os, json
 
-from flask import Flask, request
+from flask import Flask, request, Response
 
 WEBHOOK_URL_PATH = "/getUpdates/%s/" % (os.environ['TOKEN'])
 PORT = os.environ['PORT']
@@ -14,9 +14,7 @@ def home():
 @app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
 def get_updates():
     if request.method == 'POST':
-        data = request.data
-        print data
-        return 'OK'
+        return Response.data
     else:
         return 'It was ge request'
         
