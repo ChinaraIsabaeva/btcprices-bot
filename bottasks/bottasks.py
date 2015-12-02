@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates/', method=['GET'])
+@app.route('/getUpdates/', methods=['GET'])
 def get_updates():
     if request.args.get('token') == os.environ['TOKEN']:
         return request
