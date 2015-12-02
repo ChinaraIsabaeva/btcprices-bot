@@ -11,7 +11,8 @@ def home():
 @app.route('/getUpdates/', methods=['POST'])
 def get_updates():
     try:
-        return request.data
+        data = request.get_data()
+        return data
     except Exception:
         print Exception.message
         
