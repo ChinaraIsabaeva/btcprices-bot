@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, os
 
 app = Flask(__name__)
 
@@ -6,9 +6,12 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates/<token>')
+@app.route('/getUpdates/', method=['GET'])
 def get_updates():
-    return Response(status=200)
+    if request.args.get('token') == os.environ['TOKEN']:
+        return request
+    else:
+        "Request is not form Telegram"
 
 
 if __name__ == '__main__':
