@@ -11,10 +11,13 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route(WEBHOOK_URL_PATH, methods=['POST'])
+@app.route(WEBHOOK_URL_PATH, methods=['GET', 'POST'])
 def get_updates():
-    data = request.get_json(force=True)
-    return 'OK'
+    if request.method == 'POST':
+        data = request.get_json(force=True)
+        return 'OK'
+    else:
+        return 'It was ge request'
         
 if __name__ == '__main__':
     app.run(debug=True, port=PORT)
