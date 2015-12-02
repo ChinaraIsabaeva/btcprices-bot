@@ -1,4 +1,4 @@
-import os
+import os, json
 
 from flask import Flask
 
@@ -8,14 +8,16 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates/', methods=['GET'])
+@app.route('/getUpdates/', methods=['POST'])
 def get_updates():
     try:
-        return ''
+        data = json.loads(request.data)
+        print data
+        return 'OK'
     except Exception:
         print Exception.message
         
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port='8080')
