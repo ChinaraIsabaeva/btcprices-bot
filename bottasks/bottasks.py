@@ -8,10 +8,10 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates/', methods=['GET'])
+@app.route('/getUpdates/', methods=['POST'])
 def get_updates():
-    if request.args.get('token') == os.environ['TOKEN']:
-        return request
+    if request.args.post('token') == os.environ['TOKEN']:
+        return ''
     else:
         "Request is not form Telegram"
 
