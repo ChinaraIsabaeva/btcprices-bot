@@ -8,7 +8,7 @@ app = Flask(__name__)
 def home():
     return 'Hello chee-bot'
 
-@app.route('/getUpdates', methods=['POST'])
+@app.route('/getUpdates/', methods=['POST'])
 def get_updates():
     return ''
 
