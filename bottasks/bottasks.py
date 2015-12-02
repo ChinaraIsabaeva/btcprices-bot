@@ -12,11 +12,8 @@ def home():
 
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def get_updates():
-    if flask.request.headers.get('content-type') == 'application/json':
-        json_string = request.get_data()
-        return ''
-    else:
-        return 'something was wrong'
+    data = request.get_json(force=True)
+    return 'OK'
         
 
 
