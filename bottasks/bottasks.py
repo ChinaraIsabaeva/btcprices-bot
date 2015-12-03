@@ -25,7 +25,8 @@ def webhook():
     if request.method == 'POST':
         updates = request.get_json()
         if updates['message']['text'] == 'price':
-            message = {'text': 'test succeed'}
+            chat_id = updates['message']['chat']['id']
+            message = {'text': 'test succeed', 'chat_id': chat_id}
             requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage', data=json.dumps(message))
         print updates
 
