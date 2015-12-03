@@ -26,8 +26,8 @@ def webhook():
         updates = request.get_json()
         print updates['message']['text'] == 'price'
         if updates['message']['text'] == 'price':
-            print updates['message']['chat']['id']
-            message_id = updates['messae']['message_id']
+            chat_id = updates['message']['text']
+            message_id = updates['message']['message_id']
             message = {"chat_id": chat_id, "text": "code succed", "reply_to_message_id": message_id}
             print message
             print message_id
