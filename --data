@@ -1,0 +1,164 @@
+== Info: Rebuilt URL to: chat_id=645526/
+== Info: Hostname was NOT found in DNS cache
+== Info: Could not resolve host: chat_id=645526
+== Info: Closing connection 0
+== Info: Hostname was NOT found in DNS cache
+== Info:   Trying 149.154.167.200...
+== Info: Connected to api.telegram.org (149.154.167.200) port 443 (#1)
+== Info: successfully set certificate verify locations:
+== Info:   CAfile: none
+  CApath: /etc/ssl/certs
+== Info: SSLv3, TLS handshake, Client hello (1):
+=> Send SSL data, 293 bytes (0x125)
+0000: ...!..Ke..E.H..\F......{..Y...<~...@....v.0.,.(.$.........k.j.9.
+0040: 8.....2...*.&.......=.5................./.+.'.#.........g.@.3.2.
+0080: ....E.D.1.-.).%.......<./...A...............api.telegram.org....
+00c0: .......4.2..................................................... 
+0100: .....................................
+== Info: SSLv3, TLS handshake, Server hello (2):
+<= Recv SSL data, 94 bytes (0x5e)
+0000: ...Z..L..Q.....N..^..e.>%...:..O.8.>i. ..-...n.....g.A..#&"....Q
+0040: Zo.=....0.....................
+== Info: SSLv3, TLS handshake, CERT (11):
+<= Recv SSL data, 4768 bytes (0x12a0)
+0000: .........40..00...........tc\WQ.+0...*.H........0..1.0...U....US
+0040: 1.0...U....Arizona1.0...U....Scottsdale1.0...U....GoDaddy.com, I
+0080: nc.1-0+..U...$http://certs.godaddy.com/repository/1301..U...*Go 
+00c0: Daddy Secure Certificate Authority - G20...150523161738Z..180523
+0100: 161738Z0>1!0...U....Domain Control Validated1.0...U....api.teleg
+0140: ram.org0.."0...*.H.............0............\W..e..x...X/.Z.nI..
+0180: W...x..<@<!....3..B....s...r97#.V.C.q..$.9..XS..*B.N-.2....*....
+01c0: ....EXz..E.#..T...I...!.)m...9:.5...G.........r0.I..1|..+)...Ar^
+0200: 5...".Hv0m....).p....kX..s...y..._g.y..%....0..K\..L.Q....~....5
+0240: ...7...s.n=.v..t.=.,../f.D.'?.........8..........0...0...U......
+0280: .0.0...U.%..0...+.........+.......0...U...........06..U.../0-0+.
+02c0: ).'.%http://crl.godaddy.com/gdig2s1-87.crl0S..U. .L0J0H..`.H...m
+0300: ....0907..+........+http://certificates.godaddy.com/repository/0
+0340: v..+........j0h0$..+.....0...http://ocsp.godaddy.com/0@..+.....0
+0380: ..4http://certificates.godaddy.com/repository/gdig2.crt0...U.#..
+03c0: 0...@..'..4.0.3..l...,..01..U...*0(..api.telegram.org..www.api.t
+0400: elegram.org0...U...............!...6\(w0..0...*.H...............
+0440: U....{.7g....-."..(Ac...G._C.x.v..z.].l.o....)..S`..P.|5y.L.....
+0480: .&..*.zL......F\. .l8rP.2A.mg.;^.C..AUEC..`...\(.A....p..8.>....
+04c0: $.1x..m.D.....b.s.....M......%...)I:~...D......Y.<.=&?.7.L;#...
+0500: Q...Ef.....w..,... .c..I..P}$.}0..._.S...M+6\.....S.0...t.oi....
+0540: .0...0...........0...*.H........0..1.0...U....US1.0...U....Arizo
+0580: na1.0...U....Scottsdale1.0...U....GoDaddy.com, Inc.110/..U...(Go
+05c0:  Daddy Root Certificate Authority - G20...110503070000Z..3105030
+0600: 70000Z0..1.0...U....US1.0...U....Arizona1.0...U....Scottsdale1.0
+0640: ...U....GoDaddy.com, Inc.1-0+..U...$http://certs.godaddy.com/rep
+0680: ository/1301..U...*Go Daddy Secure Certificate Authority - G20..
+06c0: "0...*.H.............0..............v...b.0d...l...b../.>e...b.<
+0700: R...EKU.xkc.b...il.....L.E3......+..a.yW....?0<]G.....7.AQ..KT.(
+0740: .....08...&.fGcm.q&G.8GS.F......E...q..o....0:yO_LG...[...`;..C.
+0780: ..3N...'O.%........t.dW..DU.-*:>....2...d..:P.J..y3.. ....9.i.l
+07c0: cR.w...t.....PT5KiN.;.I.....R..........0...0...U.......0....0...
+0800: U...........0...U......@..'..4.0.3..l...,..0...U.#..0...:....g(.
+0840: ....An .....04..+........(0&0$..+.....0...http://ocsp.godaddy.co
+0880: m/05..U....0,0*.(.&.$http://crl.godaddy.com/gdroot-g2.crl0F..U. 
+08c0: .?0=0;..U. .0301..+........%https://certs.godaddy.com/repository
+0900: /0...*.H..............~l...8....K.._O..l>....P..s.W1..../....[..
+0940: ..yb....jcs1...H.;.-.]...|%O.V0..D.{,..^...a...*......}.C.D..p..
+0980: ......`..r.s$..."....bXD...%......b.Q...Q*...s.v.6....,....*...M
+09c0: u..?.A.#}[K...X.F..``..}PA......../..T.D......3..-v6&.....a....o
+0a00: .F.(..&}...........0....0..}0..e..........0...*.H........0c1.0..
+0a40: .U....US1!0...U....The Go Daddy Group, Inc.110/..U...(Go Daddy C
+0a80: lass 2 Certification Authority0...140101070000Z..310530070000Z0.
+0ac0: .1.0...U....US1.0...U....Arizona1.0...U....Scottsdale1.0...U....
+0b00: GoDaddy.com, Inc.110/..U...(Go Daddy Root Certificate Authority 
+0b40: - G20.."0...*.H.............0.........qb...Y4.......IX.".... C.;
+0b80: ....I.'....N...p..2...>.N...O/Y0"...Vk......u.9Q{..5.tN......?..
+0bc0: ......j.............;F|2...f"..im6.......`.8......F...>.]|.|..+
+0c00: S..biQ%.a.D..,.C.#..:...)....]....0.9.....K].2..bC%4.V'...;p*?n.
+0c40: ....}....Sm`..,.X.._F.....<..I1\iF..G.........0...0...U.......0.
+0c80: ...0...U...........0...U......:....g(.....An .....0...U.#..0....
+0cc0: .....L.q.a.=....j..04..+........(0&0$..+.....0...http://ocsp.god
+0d00: addy.com/02..U...+0)0'.%.#.!http://crl.godaddy.com/gdroot.crl0F.
+0d40: .U. .?0=0;..U. .0301..+........%https://certs.godaddy.com/reposi
+0d80: tory/0...*.H.............Y.S.....${.[1...lp..n.N....P.0.(\b...~
+0dc0: 3..Bv....."Xu...eg9.....8...#.?.....D...i'.Z%:.2....*8)3..g....
+0e00: . .P...*.B.7L.....$.........^.IT <.....R.I.m..X.......2.(p......
+0e40: ...Wp.Z....S..|.i..H......T..].g7l../1.7.no....W]$.......l.7Lf.a
+0e80: .. ..0.z.)...4_dw.@Q..0.....0...0...........0...*.H........0c1.0
+0ec0: ...U....US1!0...U....The Go Daddy Group, Inc.110/..U...(Go Daddy
+0f00:  Class 2 Certification Authority0...040629170620Z..340629170620Z
+0f40: 0c1.0...U....US1!0...U....The Go Daddy Group, Inc.110/..U...(Go 
+0f80: Daddy Class 2 Certification Authority0.. 0...*.H.............0..
+0fc0: ..........W.I.[.._H.......g..eh.Wq.^w...I.p.=V.c.o....?.T"T....
+1000: ..u=K.w.>x.... k/j+...~......E'o.7X..&..-.....r6N..?e...*n]....
+1040: ........:.....-..._.=.....\.e8.E...``t.A.rb.b..o_.B..Qe..#.j.x.
+1080: .M....Z..@........^s..w...y....g.....X.D{.>b(_.A.SX..~8t....i..
+10c0: .t..........0..0...U............L.q.a.=....j..0....U.#...0......
+1100: ....L.q.a.=....j...g.e0c1.0...U....US1!0...U....The Go Daddy Gro
+1140: up, Inc.110/..U...(Go Daddy Class 2 Certification Authority...0.
+1180: ..U....0....0...*.H.............2K...>........w.3..\......=.....
+11c0: .ni...0.4.cr8.......(.1.z.T...1X....b..Es..E.$.....#yi...M..L.3#
+1200: ......An.. ....;.p.~.& .T%.ns...!..l.........l......a....+.....r
+1240: 9. ......n...N&.s+...L.&q.a.tJ.W...uH..Qi....a...@..L....C......
+1280: b......2..+.E...(...*ZW.7......
+== Info: SSLv3, TLS handshake, Server key exchange (12):
+<= Recv SSL data, 333 bytes (0x14d)
+0000: ...I...A..t..@I+..`....L.N^>kX`.n8...j/.....<.!..Fv.pE]..'.8.aeh
+0040: .....D{.~........|.E....r.!.Yu.S........c74...6....J.....o...e..
+0080: ..Ks..N.k.H.E............k........N......|&..m..Pj...9s..x....
+00c0: .d..D..4C..l.......:1...?.j....7l.......Y) vY.Ra...Djd..$.S.~s..
+0100: J..Ls....l w..jN.^.....?.+zj........M1..3.`ux...1....+^.\..}....
+0140: .......h}og..
+== Info: SSLv3, TLS handshake, Server finished (14):
+<= Recv SSL data, 4 bytes (0x4)
+0000: ....
+== Info: SSLv3, TLS handshake, Client key exchange (16):
+=> Send SSL data, 70 bytes (0x46)
+0000: ...BA..........r.\.....:/+...f.qx...D..}..w.B.-..0}w.7(.DY+...m.
+0040: w.}...
+== Info: SSLv3, TLS change cipher, Client hello (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: .
+== Info: SSLv3, TLS handshake, Finished (20):
+=> Send SSL data, 16 bytes (0x10)
+0000: .........==t...x
+== Info: SSLv3, TLS change cipher, Client hello (1):
+<= Recv SSL data, 1 bytes (0x1)
+0000: .
+== Info: SSLv3, TLS handshake, Finished (20):
+<= Recv SSL data, 16 bytes (0x10)
+0000: ....R.s..:.Z*..;
+== Info: SSL connection using ECDHE-RSA-AES256-GCM-SHA384
+== Info: Server certificate:
+== Info: 	 subject: OU=Domain Control Validated; CN=api.telegram.org
+== Info: 	 start date: 2015-05-23 16:17:38 GMT
+== Info: 	 expire date: 2018-05-23 16:17:38 GMT
+== Info: 	 subjectAltName: api.telegram.org matched
+== Info: 	 issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+== Info: 	 SSL certificate verify ok.
+=> Send header, 210 bytes (0xd2)
+0000: POST /bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessa
+0040: ge HTTP/1.1
+004d: User-Agent: curl/7.35.0
+0066: Host: api.telegram.org
+007e: Accept: */*
+008b: Content-Length: 47
+009f: Content-Type: application/x-www-form-urlencoded
+00d0: 
+=> Send data, 47 bytes (0x2f)
+0000: text=%D0%B4%D0%B8%D1%80%D1%83%D0%B6%D0%B1%D0%B0
+== Info: upload completely sent off: 47 out of 47 bytes
+<= Recv header, 26 bytes (0x1a)
+0000: HTTP/1.1 400 Bad Request
+== Info: Server nginx/1.6.2 is not blacklisted
+<= Recv header, 21 bytes (0x15)
+0000: Server: nginx/1.6.2
+<= Recv header, 37 bytes (0x25)
+0000: Date: Thu, 03 Dec 2015 12:51:07 GMT
+<= Recv header, 32 bytes (0x20)
+0000: Content-Type: application/json
+<= Recv header, 20 bytes (0x14)
+0000: Content-Length: 84
+<= Recv header, 24 bytes (0x18)
+0000: Connection: keep-alive
+<= Recv header, 2 bytes (0x2)
+0000: 
+<= Recv data, 84 bytes (0x54)
+0000: {"ok":false,"error_code":400,"description":"[Error]: Bad Request
+0040: : chat_id is empty"}
+== Info: Connection #1 to host api.telegram.org left intact
