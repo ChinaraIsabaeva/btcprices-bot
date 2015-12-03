@@ -29,7 +29,8 @@ def webhook():
             chat_id = updates['message']['text']
             message_id = updates['message']['message_id']
             message = {"chat_id": chat_id, "text": "code succed", "reply_to_message_id": message_id}
-            print (requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message))
+            resp = requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message, headers='application/json')
+            print (resp)
 
     
         
