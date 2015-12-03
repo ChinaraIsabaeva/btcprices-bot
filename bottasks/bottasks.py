@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import os, json
+import os
+import json
+import requests
 
 from flask import Flask, request, redirect, url_for
 
@@ -21,9 +23,11 @@ def last_updated(data):
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        data = request.get_json()
-        print data['message']['text']
-        print data
+        updates = request.get_json()
+        if updates['message']['text'] == 'price':
+            message = {'text': 'test succeed'}
+            requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage', data=json.dumps(message))
+        print updates
 
 
     
