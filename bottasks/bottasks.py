@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    print "Syasha ne prav"
+    print ("Syasha ne prav")
     return 'Hello chee-bot'
 
 @app.route('/updates/')
@@ -24,12 +24,12 @@ def last_updated(data):
 def webhook():
     if request.method == 'POST':
         updates = request.get_json()
-        print updates['message']['text'] == 'price'
+        print (updates['message']['text'] == 'price')
         if updates['message']['text'] == 'price':
             chat_id = updates['message']['text']
             message_id = updates['message']['message_id']
             message = {"chat_id": chat_id, "text": "code succed", "reply_to_message_id": message_id}
-            print requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message)
+            print (requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message))
 
     
         
