@@ -28,7 +28,7 @@ def webhook():
             chat_id = updates['message']['chat']['id']
             message = {'text': 'test succeed', 'chat_id': chat_id}
             print updates['message']['text'] == 'price', chat_id
-            requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage?chat_id=%s&text=%s', % (chat_id, message))
+            requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage?chat_id=645526&text=reply')
         print "Use okay"
 
 
