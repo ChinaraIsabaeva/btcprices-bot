@@ -29,7 +29,7 @@ def webhook():
         message = {'chat_id': chat_id, 'text': text}
         if updates['message']['text'] == 'price':
             message['text'] = 'Скоро я смогу отправлять цену биткоина в долларах'
-        if updates['message']['text'] in ['привет', 'Привет', 'hi', 'Hi', 'HI', 'hello', 'Hello']:
+        elif updates['message']['text'] in ['привет', 'Привет', 'hi', 'Hi', 'HI', 'hello', 'Hello']:
              message['text'] = 'Привет'
         else:
             message['text'] = 'Я не знаю, что на это сказать'
