@@ -24,13 +24,13 @@ def last_updated(data):
 def webhook():
     if request.method == 'POST':
         updates = request.get_json()
-        print updates['message']['text'] == 'price'
         if updates['message']['text'] == 'price':
+            print type(updates['message']['chat']['id'])
+            print type(updates['messae']['message_id'])
             chat_id = int(updates['message']['chat']['id'])
             message_id = int(updates['messae']['message_id'])
-            data = {"chat_id": chat_id, "text": "test", "reply_to_message_id": message_id}
-            print updates['message']['text'] == 'price'
-            requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage', json=data)
+            message = {"chat_id": chat_id, "text": "test", "reply_to_message_id": message_id}
+            requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage', data=json.dumps(message))
         print "Use okay"
 
     
