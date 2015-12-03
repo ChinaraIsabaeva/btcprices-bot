@@ -19,7 +19,8 @@ def last_updated(data):
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        print request.get_json()
+        data = request.get_json()
+        print data['message']['text']
 
 
     
