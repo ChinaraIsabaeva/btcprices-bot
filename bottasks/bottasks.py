@@ -24,6 +24,7 @@ def last_updated(data):
 def webhook():
     if request.method == 'POST':
         updates = request.get_json()
+        print updates['message']['text'] == 'price'
         if updates['message']['text'] == 'price':
             print updates['message']['chat']['id']
             message_id = updates['messae']['message_id']
