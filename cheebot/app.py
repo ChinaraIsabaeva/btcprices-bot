@@ -21,7 +21,7 @@ def webhook():
         chat_id = updates['message']['chat']['id']
         text = ''
         message = {'chat_id': chat_id, 'text': text}
-        print (updates)
+        print (message)
         if updates['message']['text'] == 'price':
             print ('price')
             message['text'] = "You could receive prices soon'"
@@ -31,6 +31,7 @@ def webhook():
         else:
             print ('other')
             message['text'] = "Я не знаю, что на это сказать"
+            
         print(requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message))
         return 'OK'
 
