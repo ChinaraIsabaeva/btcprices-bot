@@ -29,9 +29,9 @@ def webhook():
             message['text'] = "Привет"
         else:
             print ('other')
-            message['text'] = "Я не знаю, что на это сказать" 
+            message['text'] = "Я не знаю, что на это сказать"
+        requests.post('https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage', json=message)
         print (message)
-        print(requests.post("https://api.telegram.org/bot120560818:AAHKRbbHYEM9l7PIxuW1-3alAGQ1PV0NeUE/sendMessage", json=message))
         return 'OK'
 
     
