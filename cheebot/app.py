@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import os
+import requests
 
 from flask import Flask, request
+
 
 
 WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=os.environ['TOKEN'])
