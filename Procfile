@@ -1,1 +1,1 @@
-web: gunicorn cheebot:app --log-file=-
+web: gunicorn cheebot.app:app --log-file=-
