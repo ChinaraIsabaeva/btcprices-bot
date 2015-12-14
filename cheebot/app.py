@@ -4,7 +4,6 @@ import os
 
 from flask import Flask, request
 
-from bot.bot import Bot
 
 WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=os.environ['TOKEN'])
 PORT = int(os.environ['PORT'])
@@ -24,6 +23,7 @@ def webhook():
         message = {'chat_id': chat_id, 'text': text}
         print (updates)
         if updates['message']['text'] == 'price':
+            print ('price')
             message['text'] = 'You could receive prices soon'
         elif updates['message']['text'] in ['привет', 'Привет', 'hi', 'Hi', 'HI', 'hello', 'Hello']:
              message['text'] = 'Привет'
