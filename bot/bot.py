@@ -35,6 +35,7 @@ class Bot(object):
             else:
                 text = ''
             update = dict(chat_id=chat_id, text=text, user=username)
+        print ('updates')
         return update
 
 
