@@ -4,7 +4,7 @@ import os
 import requests
 
 from flask import Flask, request
-from bot import Bot
+from bot.bot import Bot
 
 
 WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=os.environ['TOKEN'])
