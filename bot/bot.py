@@ -5,7 +5,7 @@ import uuid
 import json
 
 
-from lib.prices import get_prices
+from prices import get_prices
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)
