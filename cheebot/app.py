@@ -20,6 +20,7 @@ def home():
 def webhook():
     bot = Bot(TOKEN)
     if request.method == 'POST':
+        print ('blabla')
         print (request.get_json())
         updates = bot.get_update(request.get_json())
         bot.send_message(updates)
