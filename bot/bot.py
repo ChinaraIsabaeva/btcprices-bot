@@ -6,6 +6,7 @@ import json
 
 
 from lib.prices import get_prices
+from lib.set_alarms import save_alarms_settings
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)
@@ -30,11 +31,12 @@ class Bot(object):
         else:
             chat_id = received_request['message']['chat']['id']
             username = received_request['message']['from']['first_name']
+            date = received_request['message']['date']
             if 'text' in received_request['message'].keys():
                 text = received_request['message']['text']
             else:
                 text = ''
-            update = dict(chat_id=chat_id, text=text, user=username)
+            update = dict(chat_id=chat_id, text=text, user=username, date=date)
         return update
 
 
@@ -45,11 +47,14 @@ class Bot(object):
                 text = get_prices()
             elif any(received_msg.lower() in substr for substr in ['/feedback', 'rate and review']):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
+            elif received_msg.lower() == 'set alarm':
+                save_alarms_settings(updates['date'], updates['chat_id'])
+                text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
             else:
                 text =  HELP_MSG
         else:
             text = "I understand only text messages"
-        keyboard = [['price', 'help'], ['rate and review', ]]
+        keyboard = [['price', 'help'], ['rate and review', 'set alarm']]
         message = dict(chat_id=updates['chat_id'], text=text, reply_markup=dict(keyboard=keyboard, resize_keyboard=True))
         return message
 
