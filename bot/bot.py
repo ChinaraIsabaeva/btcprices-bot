@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+
 import os
 import requests
 import uuid
 import json
 
-
-from lib.prices import get_prices
-from lib.set_alarms import save_alarms_settings
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)

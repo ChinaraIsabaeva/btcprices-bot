@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import psycopg2, os, datetime, json
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
-from lib.json_encoder import MyEncoder
-from lib.prices import get_prices
 from bot.bot import Bot
+
+from json_encoder import MyEncoder
+from prices import get_prices
 
 
 TOKEN = os.environ['TOKEN']
@@ -41,11 +45,12 @@ def send_prices_by_alert():
     current_hour = datetime.datetime.now().time().hour
     bot = Bot(TOKEN)
     connection.close()
-    if current_hour == data[0]['alarm']:
-        print ('if stetment is fine')
-        chat_id = data[0]['chat_id']
-        text = get_prices()
-        bot.send_daily_msg(chat_id, text)
+    for row in data:
+        if current_hour == ['alarm']:
+            print ('if stetment is fine')
+            chat_id = row['chat_id']
+            text = get_prices()
+            bot.send_daily_msg(chat_id, text)
 
 def main():
     send_prices_by_alert()
