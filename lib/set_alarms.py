@@ -16,7 +16,8 @@ connection = psycopg2.connect(
 cursor = connection.cursor()
 
 def save_alarms_settings(timestamp, chat_id):
-    date = datetime.datetime.fromtimestamp(timestamp)
-    cursor.execute("INSERT INTO alarms (chat_id, alarm) VALUES (%s, %s)", (chat_id, date))
+    time = datetime.datetime.fromtimestamp(timestanp).strftime('%H')
+    alarm = int(time)
+    cursor.execute("INSERT INTO alarms (chat_id, alarm) VALUES (%s, %s)", (chat_id, alarm))
     connection.commit()
     
