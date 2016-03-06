@@ -80,3 +80,8 @@ class Bot(object):
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
             print ('send message')
         return 'OK'
+
+    def send_daily_msg(self, chat_id, text):
+        self._post_method('sendMessage', dict(chat_id=chat_id, text=text))
+        return 'OK'
+        
