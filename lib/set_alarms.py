@@ -5,7 +5,7 @@ from psycopg2.extras import RealDictCursor
 
 from lib.json_encoder import MyEncoder
 from lib.prices import get_prices
-from bot import Bot
+from bot.bot import Bot
 
 
 TOKEN = os.environ['TOKEN']
@@ -31,6 +31,7 @@ def save_alarms_settings(timestamp, chat_id):
     
 
 def send_prices_by_alert():
+    print ('send prices alert is working')
     cursor = connection.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT chat_id, alarm FROM alarms;")
     query = json.dumps(cursor.fetchall(), cls=MyEncoder)
@@ -39,6 +40,7 @@ def send_prices_by_alert():
     bot = Bot(TOKEN)
     connection.close()
     if current_hour == data[0]['alarm']:
+        print ('if stetment is fine')
         chat_id = data[0]['chat_id']
         text = get_prices()
         bot.send_daily_msg(chat_id, text)
