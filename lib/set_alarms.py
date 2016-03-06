@@ -37,7 +37,14 @@ def send_prices_by_alert():
     data = json.loads(query)
     current_hour = datetime.datetime.now().time().hour
     bot = Bot(TOKEN)
+    connection.close()
     if current_hour == data[0]['alarm']:
         chat_id = data[0]['chat_id']
         text = get_prices()
         bot.send_daily_msg(chat_id, text)
+
+def main():
+    send_prices_by_alert()
+
+if __name__ == '__main__':
+    main()
