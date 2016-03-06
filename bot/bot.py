@@ -5,7 +5,7 @@ import uuid
 import json
 
 
-from .prices import get_prices
+from lib.prices import get_prices
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)
@@ -35,7 +35,6 @@ class Bot(object):
             else:
                 text = ''
             update = dict(chat_id=chat_id, text=text, user=username)
-        print ('updates')
         return update
 
 
@@ -50,7 +49,7 @@ class Bot(object):
                 text =  HELP_MSG
         else:
             text = "I understand only text messages"
-        keyboard = [['price', 'help'], ['rate and review', 'set alarm']]
+        keyboard = [['price', 'help'], ['rate and review', ]]
         message = dict(chat_id=updates['chat_id'], text=text, reply_markup=dict(keyboard=keyboard, resize_keyboard=True))
         return message
 
@@ -69,8 +68,10 @@ class Bot(object):
             inlinedata = self.create_inline_message(updates)
             print (inlinedata)
             response = self._post_method('answerInlineQuery', inlinedata)
+            self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
         else:
             data = self.create_text_message(updates)
             response = self._post_method('sendMessage', data)
+            self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
             print ('send message')
         return 'OK'
