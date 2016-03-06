@@ -1,26 +1,20 @@
 # -*- coding: utf-8 -*-
 
 import os
-import requests
 
 from flask import Flask, request
+
 from bot.bot import Bot
 
-
-WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=os.environ['TOKEN'])
-PORT = int(os.environ['PORT'])
+TOKEN = os.environ['TOKEN']
+WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=TOKEN)
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return 'Hello chee-bot'
 
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
     bot = Bot(TOKEN)
     if request.method == 'POST':
-        print ('blabla')
         print (request.get_json())
         updates = bot.get_update(request.get_json())
         bot.send_message(updates)
@@ -29,4 +23,4 @@ def webhook():
     
         
 if __name__ == '__main__':
-    app.run(debug=True, port=PORT)
+    app.run(debug=True)
