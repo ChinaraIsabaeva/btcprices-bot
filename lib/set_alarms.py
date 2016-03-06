@@ -37,7 +37,6 @@ def save_alarms_settings(timestamp, chat_id):
     
 
 def send_prices_by_alert():
-    print ('send prices alert is working')
     cursor = connection.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT chat_id, alarm FROM alarms;")
     query = json.dumps(cursor.fetchall(), cls=MyEncoder)
@@ -46,7 +45,7 @@ def send_prices_by_alert():
     bot = Bot(TOKEN)
     connection.close()
     for row in data:
-        if current_hour == ['alarm']:
+        if current_hour == row['alarm']:
             print ('if stetment is fine')
             chat_id = row['chat_id']
             text = get_prices()
