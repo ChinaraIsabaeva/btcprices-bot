@@ -3,9 +3,9 @@ import psycopg2, os, datetime, json
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
+from bot.bot import Bot
 from lib.json_encoder import MyEncoder
 from lib.prices import get_prices
-from bot.bot import Bot
 
 
 TOKEN = os.environ['TOKEN']
