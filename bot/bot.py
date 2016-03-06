@@ -31,7 +31,7 @@ class Bot(object):
         else:
             chat_id = received_request['message']['chat']['id']
             username = received_request['message']['from']['first_name']
-            date = received_request['message']['date']
+            date = received_request['date']
             if 'text' in received_request['message'].keys():
                 text = received_request['message']['text']
             else:
