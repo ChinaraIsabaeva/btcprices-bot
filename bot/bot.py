@@ -31,7 +31,7 @@ class Bot(object):
         else:
             chat_id = received_request['message']['chat']['id']
             username = received_request['message']['from']['first_name']
-            date = received_request['date']
+            date = received_request['message']['date']
             if 'text' in received_request['message'].keys():
                 text = received_request['message']['text']
             else:
@@ -48,6 +48,7 @@ class Bot(object):
             elif any(received_msg.lower() in substr for substr in ['/feedback', 'rate and review']):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
             elif received_msg.lower() == 'set alarm':
+                print('I am in if for set alarm')
                 save_alarms_settings(updates['date'], updates['chat_id'])
                 text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
             else:
