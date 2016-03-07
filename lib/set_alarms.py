@@ -23,6 +23,11 @@ def save_alarms_settings(user_id, timestamp, chat_id):
     cursor = connection.cursor()
     time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
     alarm = int(time)
-    cursor.execute("INSERT INTO alarms (id, chat_id, alarm) SELECT {user_id}, {chat_id}, {alarm} WHERE NOT EXISTS (SELECT id FROM alarms WHERE id={user_id});".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
+    try:
+        cursor.execute("INSERT INTO alarms (id, chat_id, alarm) SELECT {user_id}, {chat_id}, {alarm} WHERE NOT EXISTS (SELECT id FROM alarms WHERE id={user_id});".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
+        text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
+    except ValueError:
+        text = 'You already set alarm'
     connection.commit()
     connection.close()
+    return text

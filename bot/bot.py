@@ -47,10 +47,7 @@ class Bot(object):
             elif any(received_msg.lower() in substr for substr in ['/feedback', 'rate and review']):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
             elif received_msg.lower() == 'set alarm':
-                print('I am in set alarm if stmnt')
-                save_alarms_settings(updates['user_id'], updates['date'], updates['chat_id'])
-                print('after calling method')
-                text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
+                text = save_alarms_settings(updates['user_id'], updates['date'], updates['chat_id'])
             else:
                 text = HELP_MSG
         else:

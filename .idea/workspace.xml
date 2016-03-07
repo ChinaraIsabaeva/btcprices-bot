@@ -47,10 +47,8 @@
       <file leaf-file-name="set_alarms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-              <folding>
-                <element signature="e#25#40#0" expanded="true" />
-              </folding>
+            <state line="4" column="15" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,7 +56,7 @@
       <file leaf-file-name="bot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="43" selection-start="2478" selection-end="2478" vertical-scroll-proportion="0.7826087" vertical-offset="360" max-vertical-offset="1656">
+            <state line="49" column="23" selection-start="2312" selection-end="2312" vertical-scroll-proportion="0.8078541" vertical-offset="306" max-vertical-offset="1602">
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -415,9 +413,7 @@
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="864">
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -506,16 +502,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
+        <state line="4" column="15" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="702">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="43" selection-start="2478" selection-end="2478" vertical-scroll-proportion="0.7826087" vertical-offset="360" max-vertical-offset="1656">
+        <state line="49" column="23" selection-start="2312" selection-end="2312" vertical-scroll-proportion="0.8078541" vertical-offset="306" max-vertical-offset="1602">
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>
