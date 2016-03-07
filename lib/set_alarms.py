@@ -7,7 +7,6 @@ import datetime
 from urllib import parse
 
 
-TOKEN = os.environ['TOKEN']
 parse.uses_netloc.append("postgres")
 url = parse.urlparse(os.environ["DATABASE_URL"])
 
@@ -23,10 +22,12 @@ def save_alarms_settings(user_id, timestamp, chat_id):
     cursor = connection.cursor()
     time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
     alarm = int(time)
-    try:
+    cursor.execute("SELECT id from alarms WHERE id={user_id};".format(user_id=user_id))
+    result = cursor.fetchall()
+    if len(result) == 0:
         cursor.execute("INSERT INTO alarms (id, chat_id, alarm) SELECT {user_id}, {chat_id}, {alarm} WHERE NOT EXISTS (SELECT id FROM alarms WHERE id={user_id});".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
         text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
-    except ValueError:
+    else:
         text = 'You already set alarm'
     connection.commit()
     connection.close()
