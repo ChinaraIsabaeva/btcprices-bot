@@ -10,8 +10,8 @@ from psycopg2.extras import RealDictCursor
 
 from bot.bot import Bot
 
-from json_encoder import MyEncoder
-from prices import get_prices
+from lib.json_encoder import MyEncoder
+from lib.prices import get_prices
 
 
 TOKEN = os.environ['TOKEN']
