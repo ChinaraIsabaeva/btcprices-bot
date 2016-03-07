@@ -3,8 +3,6 @@
 import psycopg2, os, datetime, json
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
