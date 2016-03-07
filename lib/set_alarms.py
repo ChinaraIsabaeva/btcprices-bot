@@ -10,8 +10,8 @@ from psycopg2.extras import RealDictCursor
 
 from bot.bot import Bot
 
-from json_encoder import MyEncoder
-from prices import get_prices
+from lib.json_encoder import MyEncoder
+from lib.prices import get_prices
 
 
 TOKEN = os.environ['TOKEN']
@@ -31,7 +31,7 @@ def save_alarms_settings(user_id, timestamp, chat_id):
     cursor = connection.cursor()
     time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
     alarm = int(time)
-    cursor.execute("INSERT INTO alarms (id, chat_id, alarm) VALUES ({user_id}, {chat_id}, {alarm}) where NOT EXISTS (SELECT * FROM alarms WHERE id={user_id}".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
+    cursor.execute("INSERT INTO alarms (id, chat_id, alarm) SELECT {user_id}, {chat_id}, {alarm} WHERE NOT EXISTS (SELECT id FROM alarms WHERE id={user_id});".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
     connection.commit()
     connection.close()
     
