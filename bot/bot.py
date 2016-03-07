@@ -6,10 +6,7 @@ import json
 
 from lib.prices import get_prices
 from lib.set_alarms import save_alarms_settings
-<<<<<<< HEAD
 
-=======
->>>>>>> working-branch
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)

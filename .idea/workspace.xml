@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5d944f-8272-4364-b126-6d4ae8653e44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/chee_bot.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bot/send_daily_msg.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Procfile" afterPath="$PROJECT_DIR$/Procfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot/bot.py" afterPath="$PROJECT_DIR$/bot/bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/set_alarms.py" afterPath="$PROJECT_DIR$/lib/set_alarms.py" />
     </list>
     <ignored path="chee_bot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,12 +43,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_alarms.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="set_alarms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.15147266" vertical-offset="0" max-vertical-offset="713">
+            <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bot.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot/bot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="1620">
+              <folding>
+                <element signature="e#19#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,12 +104,12 @@
         <option value="$PROJECT_DIR$/app/app.py" />
         <option value="$PROJECT_DIR$/lib/json_encoder.py" />
         <option value="$PROJECT_DIR$/cron_production.sh" />
-        <option value="$PROJECT_DIR$/bot/bot.py" />
         <option value="$PROJECT_DIR$/bot/send_daily_msg.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/lib/set_alarms.py" />
+        <option value="$PROJECT_DIR$/bot/bot.py" />
       </list>
     </option>
   </component>
@@ -456,7 +453,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Envs/chee-bot/lib/python3.4/importlib/__init__.py">
@@ -467,15 +466,6 @@
     <entry file="file://$PROJECT_DIR$/bot/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="726" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bot/bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="1602">
-          <folding>
-            <element signature="e#19#28#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cron_production.sh">
@@ -515,9 +505,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.15147266" vertical-offset="0" max-vertical-offset="713">
+        <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
           <folding>
             <element signature="e#25#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="1620">
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
