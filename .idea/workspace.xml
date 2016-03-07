@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="da5d944f-8272-4364-b126-6d4ae8653e44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot/bot.py" afterPath="$PROJECT_DIR$/bot/bot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/set_alarms.py" afterPath="$PROJECT_DIR$/lib/set_alarms.py" />
     </list>
     <ignored path="chee_bot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +47,7 @@
       <file leaf-file-name="set_alarms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+            <state line="19" column="26" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
               </folding>
@@ -57,7 +58,7 @@
       <file leaf-file-name="bot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="1620">
+            <state line="51" column="43" selection-start="2478" selection-end="2478" vertical-scroll-proportion="0.7826087" vertical-offset="360" max-vertical-offset="1656">
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -505,7 +506,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="24" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+        <state line="19" column="26" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
           <folding>
             <element signature="e#25#40#0" expanded="true" />
           </folding>
@@ -514,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="1620">
+        <state line="51" column="43" selection-start="2478" selection-end="2478" vertical-scroll-proportion="0.7826087" vertical-offset="360" max-vertical-offset="1656">
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>
