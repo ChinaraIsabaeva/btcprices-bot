@@ -20,7 +20,6 @@ def webhook():
         bot.send_message(updates)
         return 'OK'
 
-    
-        
+
 if __name__ == '__main__':
     app.run(debug=True)
