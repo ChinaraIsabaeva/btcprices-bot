@@ -6,6 +6,7 @@ import uuid
 import json
 
 from lib.prices import get_prices
+from lib.set_alarms import save_alarms_settings
 
 
 TOKEN = os.environ['TOKEN']
