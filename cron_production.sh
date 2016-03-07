@@ -1,5 +1,4 @@
 #! /bin/bash
 
 
-cd lib/
-python set_alarms.py
+python lib/set_alarms.py

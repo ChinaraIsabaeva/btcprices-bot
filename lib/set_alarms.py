@@ -3,15 +3,13 @@
 import psycopg2, os, datetime, json
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 from urllib import parse
 from psycopg2.extras import RealDictCursor
 
 from bot.bot import Bot
 
-from lib.json_encoder import MyEncoder
-from lib.prices import get_prices
+from json_encoder import MyEncoder
+from prices import get_prices
 
 
 TOKEN = os.environ['TOKEN']
