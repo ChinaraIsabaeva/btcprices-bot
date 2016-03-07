@@ -27,11 +27,11 @@ connection = psycopg2.connect(
 )
 
 
-def save_alarms_settings(timestamp, chat_id):
+def save_alarms_settings(user_id, timestamp, chat_id):
     cursor = connection.cursor()
     time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
     alarm = int(time)
-    cursor.execute("INSERT INTO alarms (chat_id, alarm) VALUES (%s, %s)", (chat_id, alarm))
+    cursor.execute("INSERT INTO alarms (id, chat_id, alarm) VALUES ({user_id}, {chat_id}, {alarm}) where NOT EXISTS (SELECT * FROM alarms WHERE id={user_id}".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
     connection.commit()
     connection.close()
     
