@@ -31,12 +31,11 @@ class Bot(object):
             chat_id = received_request['message']['chat']['id']
             username = received_request['message']['from']['first_name']
             date = received_request['message']['date']
-            user_id = received_request['message']['from']['id']
             if 'text' in received_request['message'].keys():
                 text = received_request['message']['text']
             else:
                 text = ''
-            update = dict(chat_id=chat_id, text=text, user=username, date=date, user_id=user_id)
+            update = dict(chat_id=chat_id, text=text, user=username, date=date)
         return update
 
     def create_text_message(self, updates):
@@ -47,7 +46,7 @@ class Bot(object):
             elif any(received_msg.lower() in substr for substr in ['/feedback', 'rate and review']):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
             elif received_msg.lower() == 'set alarm':
-                text = save_alarms_settings(updates['user_id'], updates['date'], updates['chat_id'])
+                text = save_alarms_settings(updates['date'], updates['chat_id'])
             else:
                 text = HELP_MSG
         else:

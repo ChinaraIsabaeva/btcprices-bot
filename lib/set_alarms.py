@@ -11,7 +11,7 @@ parse.uses_netloc.append("postgres")
 url = parse.urlparse(os.environ["DATABASE_URL"])
 
 
-def save_alarms_settings(user_id, timestamp, chat_id):
+def save_alarms_settings(timestamp, chat_id):
     connection = psycopg2.connect(
         database=url.path[1:],
         user=url.username,
@@ -22,10 +22,10 @@ def save_alarms_settings(user_id, timestamp, chat_id):
     cursor = connection.cursor()
     time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
     alarm = int(time)
-    cursor.execute("SELECT id from alarms WHERE id={user_id};".format(user_id=user_id))
+    cursor.execute("SELECT chat_id from alarms WHERE chat_id={chat_id};".format(chat_id=chat_id))
     result = cursor.fetchall()
     if len(result) == 0:
-        cursor.execute("INSERT INTO alarms (id, chat_id, alarm) SELECT {user_id}, {chat_id}, {alarm} WHERE NOT EXISTS (SELECT id FROM alarms WHERE id={user_id});".format(user_id=user_id, chat_id=chat_id, alarm=alarm))
+        cursor.execute("INSERT INTO alarms (chat_id, alarm) SELECT {chat_id}, {alarm} WHERE NOT EXISTS (SELECT chat_id FROM alarms WHERE chat_id={chat_id});".format(chat_id=chat_id, alarm=alarm))
         text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
     else:
         text = 'You already set alarm'
