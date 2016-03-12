@@ -15,7 +15,7 @@ app = Flask(__name__)
 def webhook():
     bot = Bot(TOKEN)
     if request.method == 'POST':
-        print (request.get_json())
+        print(request.get_json())
         updates = bot.get_update(request.get_json())
         bot.send_message(updates)
         return 'OK'

@@ -1,4 +1,4 @@
 #! /bin/bash
 
 
-python lib/set_alarms.py
+python bot/send_daily_msg.py

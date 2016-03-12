@@ -26,6 +26,7 @@ class Bot(object):
             inline_query_id = received_request['inline_query']['id']
             query = received_request['inline_query']['query']
             username = received_request['inline_query']['from']['first_name']
+            data =
             update = dict(id=inline_query_id, query=query, user=username)
         else:
             chat_id = received_request['message']['chat']['id']
@@ -56,9 +57,12 @@ class Bot(object):
         return message
 
     def create_inline_message(self, updates):
-        text = get_prices()
         if updates['query'] in 'btcprices':
+            text = get_prices()
             results = [{'type': 'article', 'title': 'price', 'message_text': text, 'id': updates['id']+'/0'}]
+        elif updates['query'] in 'set alarms':
+            text = save_alarms_settings(updates[])
+            results
         else:
             results = [{'type': 'article', 'title': 'help', 'message_text': HELP_MSG, 'id': updates['id']+'/0'}]
         return {'inline_query_id': updates['id'], 'results': json.dumps(results)}
