@@ -26,7 +26,6 @@ class Bot(object):
             inline_query_id = received_request['inline_query']['id']
             query = received_request['inline_query']['query']
             username = received_request['inline_query']['from']['first_name']
-            data =
             update = dict(id=inline_query_id, query=query, user=username)
         else:
             chat_id = received_request['message']['chat']['id']

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5d944f-8272-4364-b126-6d4ae8653e44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot/bot.py" afterPath="$PROJECT_DIR$/bot/bot.py" />
     </list>
     <ignored path="chee_bot.iws" />
@@ -29,7 +28,7 @@
       <file leaf-file-name="cron_production.sh" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cron_production.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
+            <state line="4" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
               <folding />
             </state>
           </provider>
@@ -48,9 +47,7 @@
         <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="27" column="165" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="720">
-              <folding>
-                <element signature="e#25#40#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,7 +55,7 @@
       <file leaf-file-name="bot.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1566">
+            <state line="26" column="18" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1638">
               <folding />
             </state>
           </provider>
@@ -143,7 +140,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -192,6 +188,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,8 +197,8 @@
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -298,9 +295,6 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -322,6 +316,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -384,7 +381,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -414,9 +411,7 @@
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="864">
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -466,7 +461,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cron_production.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
+        <state line="4" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
@@ -483,25 +478,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot/send_daily_msg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/set_alarms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="165" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="720">
-          <folding>
-            <element signature="e#25#40#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1566">
+        <state line="26" column="18" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1638">
           <folding />
         </state>
       </provider>
@@ -509,6 +495,13 @@
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.32231405" vertical-offset="0" max-vertical-offset="726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/send_daily_msg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="6" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
