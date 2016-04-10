@@ -10,7 +10,11 @@ from lib.set_alarms import save_alarms_settings
 
 TOKEN = os.environ['TOKEN']
 BASE_URL = "https://api.telegram.org/bot{token}/".format(token=TOKEN)
-HELP_MSG = "You can find more information at: http://btcprices.info\n\nTo get help just send me message with text 'help' or command \n'/help'.\n\n To get prices send me message with text 'price' or command \n'/price'.\n\nAlso you can use this bot in inline mode. Use query 'help' to get help and 'price' to get price\n\n Please rate and review bot at: https://storebot.me/bot/btcprices_bot\n\n"
+HELP_MSG = "You can find more information at: http://btcprices.info" \
+           "\n\nTo get help just send me message with text 'help' or command \n'/help'." \
+           "\n\n To get prices send me message with text 'price' or command \n'/price'." \
+           "\n\nAlso you can use this bot in inline mode. Use query 'help' to get help and 'price' to get price" \
+           "\n\n Please rate and review bot at: https://storebot.me/bot/btcprices_bot\n\n"
 
 
 class Bot(object):
@@ -18,7 +22,7 @@ class Bot(object):
         self.token = token
 
     def _post_method(self, method, data):
-        response = requests.post(BASE_URL+method, json=data)
+        response = requests.post(BASE_URL + method, json=data)
         print(response)
 
     def get_update(self, received_request):
@@ -67,12 +71,11 @@ class Bot(object):
         if 'query' in updates.keys():
             print ('In quert if')
             inlinedata = self.create_inline_message(updates)
-            print (inlinedata)
-            response = self._post_method('answerInlineQuery', inlinedata)
+            self._post_method('answerInlineQuery', inlinedata)
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
         else:
             data = self.create_text_message(updates)
-            response = self._post_method('sendMessage', data)
+            self._post_method('sendMessage', data)
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
             print ('send message')
         return 'OK'
