@@ -5,7 +5,7 @@ import requests
 import json
 
 from lib.prices import get_prices
-from lib.set_alarms import save_alarms_settings
+from lib.set_alarms import save_alarms_settings, delete_alarm_settings
 
 
 TOKEN = os.environ['TOKEN']
@@ -57,6 +57,8 @@ class Bot(object):
                 text = save_alarms_settings(updates['date'], updates['chat_id'], 'hourly')
             elif received_msg.lower() == 'daily':
                 text = save_alarms_settings(updates['date'], updates['chat_id'], 'daily')
+            elif received_msg.lower() == 'delete alarm':
+                text = delete_alarm_settings(updates['chat_id'])
             else:
                 text = HELP_MSG
         else:
