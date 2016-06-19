@@ -44,7 +44,6 @@ def delete_alarm_settings(chat_id):
     )
     cursor = connection.cursor()
     cursor.execute("DELETE from alarms WHERE chat_id={chat_id};".format(chat_id=chat_id))
-    result = cursor.fetchall()
     text = "You alarm has been deleted."
     connection.commit()
     connection.close()
