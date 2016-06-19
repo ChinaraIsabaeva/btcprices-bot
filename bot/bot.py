@@ -26,13 +26,20 @@ class Bot(object):
         print(response)
 
     def get_update(self, received_request):
-        inline_query_id = received_request.get(['inline_query']['id'])
-        query = received_request.get(['inline_query']['query'])
-        username = received_request.get(['inline_query']['from']['first_name']) or received_request.get(['message']['from']['first_name'])
-        chat_id = received_request.get(['message']['chat']['id'])
-        date = received_request.get(['message']['date'])
-        text = received_request.get(['message']['text'])
-        update = dict(chat_id=chat_id, text=text, user=username, date=date, id=inline_query_id, query=query)
+        if 'inline_query' in received_request.keys():
+            inline_query_id = received_request['inline_query']['id']
+            query = received_request['inline_query']['query']
+            username = received_request['inline_query']['from']['first_name']
+            update = dict(id=inline_query_id, query=query, user=username)
+        else:
+            chat_id = received_request['message']['chat']['id']
+            username = received_request['message']['from']['first_name']
+            date = received_request['message']['date']
+            if 'text' in received_request['message'].keys():
+                text = received_request['message']['text']
+            else:
+                text = ''
+            update = dict(chat_id=chat_id, text=text, user=username, date=date)
         return update
 
     def create_text_message(self, updates):
