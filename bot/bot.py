@@ -26,23 +26,18 @@ class Bot(object):
         print(response)
 
     def get_update(self, received_request):
-        if 'inline_query' in received_request.keys():
-            inline_query_id = received_request['inline_query']['id']
-            query = received_request['inline_query']['query']
-            username = received_request['inline_query']['from']['first_name']
-            update = dict(id=inline_query_id, query=query, user=username)
-        else:
-            chat_id = received_request['message']['chat']['id']
-            username = received_request['message']['from']['first_name']
-            date = received_request['message']['date']
-            if 'text' in received_request['message'].keys():
-                text = received_request['message']['text']
-            else:
-                text = ''
-            update = dict(chat_id=chat_id, text=text, user=username, date=date)
+        inline_query_id = received_request.get(['inline_query']['id'])
+        query = received_request.get(['inline_query']['query'])
+        username = received_request.get(['inline_query']['from']['first_name']) or received_request.get(['message']['from']['first_name'])
+        chat_id = received_request.get(['message']['chat']['id'])
+        date = received_request.get(['message']['date'])
+        text = received_request.get(['message']['text'])
+        update = dict(chat_id=chat_id, text=text, user=username, date=date, id=inline_query_id, query=query)
         return update
 
     def create_text_message(self, updates):
+        keyboard = [['price', 'help', 'rate and review'], [ 'set alarm', 'delete alarm']]
+        reply_markup=dict(keyboard=keyboard, resize_keyboard=True)
         if updates['text'] != '':
             received_msg = updates['text']
             if any(received_msg.lower() in substr for substr in ['btcprices', 'цена', '/price']):
@@ -50,13 +45,18 @@ class Bot(object):
             elif any(received_msg.lower() in substr for substr in ['/feedback', 'rate and review']):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
             elif received_msg.lower() == 'set alarm':
-                text = save_alarms_settings(updates['date'], updates['chat_id'])
+                text = 'You can set alarm to receive prices daily or hourly.'
+                reply_markup=dict(force_reply=True)
+            elif received_msg.lower() == 'hourly':
+                text = save_alarms_settings(updates['date'], updates['chat_id'], 'hourly')
+            elif received_msg.lower() == 'daily':
+                text = save_alarms_settings(updates['date'], updates['chat_id'], 'daily')
             else:
                 text = HELP_MSG
         else:
             text = "I understand only text messages"
-        keyboard = [['price', 'help'], ['rate and review', 'set alarm']]
-        message = dict(chat_id=updates['chat_id'], text=text, reply_markup=dict(keyboard=keyboard, resize_keyboard=True))
+        
+        message = dict(chat_id=updates['chat_id'], text=text, reply_markup=reply_markup)
         return message
 
     def create_inline_message(self, updates):
@@ -69,7 +69,6 @@ class Bot(object):
 
     def send_message(self, updates):
         if 'query' in updates.keys():
-            print ('In quert if')
             inlinedata = self.create_inline_message(updates)
             self._post_method('answerInlineQuery', inlinedata)
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
@@ -77,7 +76,6 @@ class Bot(object):
             data = self.create_text_message(updates)
             self._post_method('sendMessage', data)
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
-            print ('send message')
         return 'OK'
 
     def send_daily_msg(self, chat_id, text):

@@ -26,9 +26,9 @@ def save_alarms_settings(timestamp, chat_id):
     result = cursor.fetchall()
     if len(result) == 0:
         cursor.execute("INSERT INTO alarms (chat_id, alarm) SELECT {chat_id}, {alarm} WHERE NOT EXISTS (SELECT chat_id FROM alarms WHERE chat_id={chat_id});".format(chat_id=chat_id, alarm=alarm))
-        text = 'You alarm was set. Starting tomorrow you will receive prices every day at this time.'
+        text = "You alarm was set. Starting tomorrow you will receive prices every day at {0}.00 o'clock.".format(time)
     else:
-        text = 'You already set alarm'
+        text = "You have active alarm already."
     connection.commit()
     connection.close()
     return text
