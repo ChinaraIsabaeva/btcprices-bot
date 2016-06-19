@@ -27,7 +27,7 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
     if len(result) == 0:
         cursor.execute("INSERT INTO alarms (chat_id, alarm, alarm_type) SELECT {chat_id}, {alarm}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id FROM alarms WHERE chat_id={chat_id});".format(chat_id=chat_id, alarm=alarm, alarm_type=alarm_type))
         if alarm_type == 'daily':
-            text = "You alarm was set. Starting tomorrow you will receive prices every day at the beginning of this hour".
+            text = "You alarm was set. Starting tomorrow you will receive prices every day at the beginning of this hour."
         else:
             text = "You alarm was set. Starting next hour you will receive prices at the beginning of every hour."
     else:
