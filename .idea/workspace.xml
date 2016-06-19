@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="da5d944f-8272-4364-b126-6d4ae8653e44" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot/bot.py" afterPath="$PROJECT_DIR$/bot/bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot/send_daily_msg.py" afterPath="$PROJECT_DIR$/bot/send_daily_msg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chee_bot.iws" />
@@ -39,7 +38,7 @@
       <file leaf-file-name="bot.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="31" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.20661157" vertical-offset="786" max-vertical-offset="1638">
+            <state line="39" column="58" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.49586776" vertical-offset="342" max-vertical-offset="1584">
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
               </folding>
@@ -72,8 +71,8 @@
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/lib/set_alarms.py" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/bot/bot.py" />
         <option value="$PROJECT_DIR$/bot/send_daily_msg.py" />
+        <option value="$PROJECT_DIR$/bot/bot.py" />
       </list>
     </option>
   </component>
@@ -163,7 +162,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cook_book" />
     <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -455,7 +454,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="31" selection-start="2305" selection-end="2305" vertical-scroll-proportion="0.20661157" vertical-offset="786" max-vertical-offset="1638">
+        <state line="39" column="58" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.49586776" vertical-offset="342" max-vertical-offset="1584">
           <folding>
             <element signature="e#19#28#0" expanded="true" />
           </folding>
