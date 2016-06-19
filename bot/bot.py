@@ -44,7 +44,6 @@ class Bot(object):
 
     def create_text_message(self, updates):
         keyboard = [['price', 'help', 'rate and review'], [ 'set alarm', 'delete alarm']]
-        reply_markup=dict(keyboard=keyboard, resize_keyboard=True)
         if updates['text'] != '':
             received_msg = updates['text']
             if any(received_msg.lower() in substr for substr in ['btcprices', 'цена', '/price']):
@@ -53,7 +52,7 @@ class Bot(object):
                 text = 'Please rate and leave your review at: https://storebot.me/bot/btcprices_bot'
             elif received_msg.lower() == 'set alarm':
                 text = 'You can set alarm to receive prices daily or hourly.'
-                reply_markup=dict(force_reply=True)
+                keyboard = [['daily', 'hourly'], ]
             elif received_msg.lower() == 'hourly':
                 text = save_alarms_settings(updates['date'], updates['chat_id'], 'hourly')
             elif received_msg.lower() == 'daily':
@@ -63,7 +62,7 @@ class Bot(object):
         else:
             text = "I understand only text messages"
         
-        message = dict(chat_id=updates['chat_id'], text=text, reply_markup=reply_markup)
+        message = dict(chat_id=updates['chat_id'], text=text, reply_markup=dict(keyboard=keyboard, resize_keyboard=True))
         return message
 
     def create_inline_message(self, updates):
