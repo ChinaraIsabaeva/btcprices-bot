@@ -29,7 +29,7 @@ connection = psycopg2.connect(
 
 def send_prices_by_alert():
     cursor = connection.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT chat_id, alarm FROM alarms;")
+    cursor.execute("SELECT chat_id, alarm, alarm_type FROM alarms;")
     query = json.dumps(cursor.fetchall(), cls=MyEncoder)
     data = json.loads(query)
     current_hour = datetime.datetime.now().time().hour
