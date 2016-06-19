@@ -29,7 +29,7 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
         if alarm_type == 'daily':
             text = "You alarm was set. Starting tomorrow you will receive prices every day at the beginning of this hour".
         else:
-            text = "You alarm was set. Starting next hour you will receive prices at the beginning of every hour.".
+            text = "You alarm was set. Starting next hour you will receive prices at the beginning of every hour."
     else:
         text = "You have active alarm already."
     connection.commit()
