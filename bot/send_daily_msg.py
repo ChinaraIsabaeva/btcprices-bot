@@ -50,5 +50,6 @@ def send_prices_by_alert():
 def main():
     send_prices_by_alert()
 
+
 if __name__ == '__main__':
     main()
