@@ -5,5 +5,5 @@ def get_prices():
     message = requests.get('http://btcprices.info/api/latestprice').json()
     data = 'BTC prices on ' + message.pop('date') + ':\n'
     for key in message:
-        data += key + ': ' + message[key] + '\n'
+        data += key + ': ' + str(message[key]) + '\n'
     return data
