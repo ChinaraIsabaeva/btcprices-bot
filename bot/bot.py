@@ -86,7 +86,8 @@ class Bot(object):
             text = delete_alarm_settings(updates['chat_id'])
         else:
             text = response.get('text')
-        
+
+        print text
         message = dict(
             chat_id=response['chat_id'],
             text=text,
