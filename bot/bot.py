@@ -50,10 +50,10 @@ class Bot(object):
             response = "I accept message or inline query only"
         return response
 
-    def create_text_message(self, updates):
+    def create_text_message(self, response):
         keyboard = ['price', 'set alarm', 'delete alarm']
-        if updates['text'] != '':
-            received_msg = updates['text']
+        if type(response) is dict:
+            received_msg = response['text']
             if any(
                     received_msg.lower() in substr for substr in [
                         'btcprices', 'цена', '/price'
@@ -77,7 +77,7 @@ class Bot(object):
             else:
                 text = HELP_MSG
         else:
-            text = "I understand only text messages"
+            text = response
         
         message = dict(
             chat_id=updates['chat_id'],
