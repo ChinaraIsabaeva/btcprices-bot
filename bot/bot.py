@@ -62,7 +62,11 @@ class Bot(object):
         return response
 
     def create_text_message(self, response):
-        keyboard = ['price', 'set alarm', 'delete alarm']
+        keyboard = [[{
+            'text': 'price'},
+            {'text': 'set alarm'},
+            {'text': 'delete alarm'}
+        ], ]
         received_msg = response.get('text')
         if any(
                 received_msg.lower() in substr for substr in [
@@ -73,7 +77,7 @@ class Bot(object):
 
         elif received_msg.lower() == 'set alarm':
             text = 'You can set alarm to receive prices daily or hourly.'
-            keyboard = [['daily', 'hourly'], ]
+            keyboard = [[{'text': 'daily'}, {'text':'hourly'}], ]
         elif received_msg.lower() == 'hourly':
             text = save_alarms_settings(
                 response['date'], response['chat_id'], 'hourly'
@@ -83,7 +87,7 @@ class Bot(object):
                 response['date'], response['chat_id'], 'daily'
             )
         elif received_msg.lower() == 'delete alarm':
-            text = delete_alarm_settings(updates['chat_id'])
+            text = delete_alarm_settings(response['chat_id'])
         else:
             text = response.get('text')
 
