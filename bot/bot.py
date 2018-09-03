@@ -87,7 +87,6 @@ class Bot(object):
         else:
             text = response.get('text')
 
-        print (text)
         message = dict(
             chat_id=response['chat_id'],
             text=text,
@@ -110,6 +109,7 @@ class Bot(object):
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
         else:
             data = self.create_text_message(updates)
+            print("sending data", data)
             self._post_method('sendMessage', data)
             self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
         return 'OK'
