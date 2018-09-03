@@ -30,24 +30,35 @@ class Bot(object):
             i in accepted_fields for i in received_request.keys()
         )
 
+        user = dict()
+
+        for k, value in received_request.items():
+            if type(value) is dict:
+                for key in value:
+                    if key == 'from':
+                        user = value.get(key)
+
+        response = dict(
+            chat_id=user.get('id'),
+            user=user.get('username'),
+        )
+
         if has_accepted_field:
             if 'inline_query' in received_request.keys():
-                return "Currently not working"
+                text = "Currently not working"
             else:
                 message = received_request.get('message')
                 if message is None:
                     message = received_request.get('edited_message')
 
-                user = message.get('from')
+                text = message.get('text')
+                date = message.get('date')
+                response.update(date=date)
 
-                response = dict(
-                    chat_id=user.get('id'),
-                    text=message.get('text'),
-                    user=user.get('username'),
-                    date=message.get('date')
-                )
         else:
-            response = "I accept message or inline query only"
+            text = "I accept message or inline query only"
+        response.update(text=text)
+
         return response
 
     def create_text_message(self, response):
