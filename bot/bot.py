@@ -66,11 +66,11 @@ class Bot(object):
                 keyboard = [['daily', 'hourly'], ]
             elif received_msg.lower() == 'hourly':
                 text = save_alarms_settings(
-                    updates['date'], updates['chat_id'], 'hourly'
+                    response['date'], response['chat_id'], 'hourly'
                 )
             elif received_msg.lower() == 'daily':
                 text = save_alarms_settings(
-                    updates['date'], updates['chat_id'], 'daily'
+                    response['date'], response['chat_id'], 'daily'
                 )
             elif received_msg.lower() == 'delete alarm':
                 text = delete_alarm_settings(updates['chat_id'])
