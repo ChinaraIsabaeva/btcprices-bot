@@ -63,35 +63,32 @@ class Bot(object):
 
     def create_text_message(self, response):
         keyboard = ['price', 'set alarm', 'delete alarm']
-        if type(response) is dict:
-            received_msg = response['text']
-            if any(
-                    received_msg.lower() in substr for substr in [
-                        'btcprices', 'цена', '/price'
-                    ]
-            ):
-                text = get_prices()
+        received_msg = response.get('text')
+        if any(
+                received_msg.lower() in substr for substr in [
+                    'btcprices', 'цена', '/price'
+                ]
+        ):
+            text = get_prices()
 
-            elif received_msg.lower() == 'set alarm':
-                text = 'You can set alarm to receive prices daily or hourly.'
-                keyboard = [['daily', 'hourly'], ]
-            elif received_msg.lower() == 'hourly':
-                text = save_alarms_settings(
-                    response['date'], response['chat_id'], 'hourly'
-                )
-            elif received_msg.lower() == 'daily':
-                text = save_alarms_settings(
-                    response['date'], response['chat_id'], 'daily'
-                )
-            elif received_msg.lower() == 'delete alarm':
-                text = delete_alarm_settings(updates['chat_id'])
-            else:
-                text = HELP_MSG
+        elif received_msg.lower() == 'set alarm':
+            text = 'You can set alarm to receive prices daily or hourly.'
+            keyboard = [['daily', 'hourly'], ]
+        elif received_msg.lower() == 'hourly':
+            text = save_alarms_settings(
+                response['date'], response['chat_id'], 'hourly'
+            )
+        elif received_msg.lower() == 'daily':
+            text = save_alarms_settings(
+                response['date'], response['chat_id'], 'daily'
+            )
+        elif received_msg.lower() == 'delete alarm':
+            text = delete_alarm_settings(updates['chat_id'])
         else:
-            text = response
+            text = response.get('text')
         
         message = dict(
-            chat_id=updates['chat_id'],
+            chat_id=response['chat_id'],
             text=text,
             reply_markup=dict(keyboard=keyboard, resize_keyboard=True)
         )
