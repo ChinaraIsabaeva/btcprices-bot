@@ -4,10 +4,10 @@ import psycopg2
 import os
 import datetime
 
-import urlparse
+from urllib.parse import urlparse
 
 
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
+url = urlparse(os.environ["DATABASE_URL"])
 
 
 def save_alarms_settings(timestamp, chat_id, alarm_type):
