@@ -31,7 +31,9 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
             "INSERT INTO alarms (chat_id, time, alarm_type) SELECT {chat_id}, "
             "{time}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id "
             "FROM alarms WHERE chat_id={chat_id});".format(
-                chat_id=chat_id, time=timestamp, alarm_type=alarm_type
+                chat_id=chat_id,
+                time=datetime.fromtimestamp(timestamp),
+                alarm_type=alarm_type
             )
         )
         if alarm_type == 'daily':
