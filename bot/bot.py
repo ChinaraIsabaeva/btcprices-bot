@@ -21,8 +21,12 @@ class Bot(object):
         self.token = token
 
     def _post_method(self, method, data):
-        response = requests.post(BASE_URL + method, json=data)
-        print(response)
+        try:
+            response = requests.post(BASE_URL + method, json=data)
+            print(response)
+        except Exception as e:
+            print e
+            return 400
 
     def get_update(self, received_request):
         accepted_fields = ['message', 'edited_message', 'inline_query']

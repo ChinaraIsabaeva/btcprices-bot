@@ -20,14 +20,23 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
         port=url.port
     )
     cursor = connection.cursor()
-    time = datetime.datetime.fromtimestamp(timestamp).strftime('%H')
-    alarm = int(time)
-    cursor.execute("SELECT chat_id from alarms WHERE chat_id={chat_id};".format(chat_id=chat_id))
+    cursor.execute(
+        "SELECT chat_id from alarms WHERE chat_id={chat_id};".format(
+            chat_id=chat_id
+        )
+    )
     result = cursor.fetchall()
     if len(result) == 0:
-        cursor.execute("INSERT INTO alarms (chat_id, alarm, alarm_type) SELECT {chat_id}, {alarm}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id FROM alarms WHERE chat_id={chat_id});".format(chat_id=chat_id, alarm=alarm, alarm_type=alarm_type))
+        cursor.execute(
+            "INSERT INTO alarms (chat_id, time, alarm_type) SELECT {chat_id}, "
+            "{time}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id "
+            "FROM alarms WHERE chat_id={chat_id});".format(
+                chat_id=chat_id, time=timestamp, alarm_type=alarm_type
+            )
+        )
         if alarm_type == 'daily':
-            text = "You alarm was set. Starting tomorrow you will receive prices every day at the beginning of this hour."
+            text = "You alarm was set. Starting tomorrow you will receive " \
+                   "prices every day at the beginning of this hour."
         else:
             text = "You alarm was set. Starting next hour you will receive prices at the beginning of every hour."
     else:

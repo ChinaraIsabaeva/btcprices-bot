@@ -11,3 +11,4 @@ python-telegram-bot==2.9.2
 pytz==2015.7
 requests==2.8.1
 six==1.10.0
+Flask-SQLAlchemy==2.3.2

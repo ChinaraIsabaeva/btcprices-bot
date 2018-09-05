@@ -7,9 +7,11 @@ from flask import Flask, request
 from bot.bot import Bot
 
 TOKEN = os.environ['TOKEN']
+DATABASE_URI = os.environ['DATABASE_URL']
 WEBHOOK_URL_PATH = "/getUpdates/{token}/".format(token=TOKEN)
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
 
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():

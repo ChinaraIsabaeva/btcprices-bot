@@ -29,20 +29,22 @@ connection = psycopg2.connect(
 
 def send_prices_by_alert():
     cursor = connection.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT chat_id, alarm, alarm_type FROM alarms;")
+    cursor.execute("SELECT chat_id, time, alarm_type FROM alarms;")
     query = json.dumps(cursor.fetchall(), cls=MyEncoder)
     data = json.loads(query)
     current_hour = datetime.datetime.now().time().hour
     bot = Bot(TOKEN)
     connection.close()
     for row in data:
-        if row['alarm_type'] == 'hourly':
-            chat_id = row['chat_id']
+        if row.get('alarm_type') == 'hourly':
+            chat_id = row.get('chat_id')
             text = get_prices()
             bot.send_daily_msg(chat_id, text)
         else:
-            if current_hour == row['alarm']:
-                chat_id = row['chat_id']
+            timestamp = row.get('time')
+            if current_hour == datetime.datetime.fromtimestamp(
+                    timestamp).time().hour:
+                chat_id = row.get('chat_id')
                 text = get_prices()
                 bot.send_daily_msg(chat_id, text)
 
