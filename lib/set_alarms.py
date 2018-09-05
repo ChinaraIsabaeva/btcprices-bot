@@ -32,7 +32,7 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
             "{time}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id "
             "FROM alarms WHERE chat_id={chat_id});".format(
                 chat_id=chat_id,
-                time=datetime.datetime.fromtimestamp(timestamp),
+                time=datetime.datetime.fromtimestamp(timestamp).isoformat(),
                 alarm_type=alarm_type
             )
         )
