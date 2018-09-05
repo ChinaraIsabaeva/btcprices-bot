@@ -25,7 +25,7 @@ class Bot(object):
             response = requests.post(BASE_URL + method, json=data)
             print(response)
         except Exception as e:
-            print e
+            print(e)
             return 400
 
     def get_update(self, received_request):
