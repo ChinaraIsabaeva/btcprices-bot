@@ -4,11 +4,10 @@ import psycopg2
 import os
 import datetime
 
-from urllib import parse
+import urlparse
 
 
-parse.uses_netloc.append("postgres")
-url = parse.urlparse(os.environ["DATABASE_URL"])
+url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 
 def save_alarms_settings(timestamp, chat_id, alarm_type):
@@ -29,7 +28,7 @@ def save_alarms_settings(timestamp, chat_id, alarm_type):
     if len(result) == 0:
         cursor.execute(
             "INSERT INTO alarms (chat_id, time, alarm_type) SELECT {chat_id}, "
-            "{time}, '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id "
+            "'{time}', '{alarm_type}' WHERE NOT EXISTS (SELECT chat_id "
             "FROM alarms WHERE chat_id={chat_id});".format(
                 chat_id=chat_id,
                 time=datetime.datetime.fromtimestamp(timestamp).isoformat(),
