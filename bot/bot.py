@@ -34,16 +34,22 @@ class Bot(object):
             i in accepted_fields for i in received_request.keys()
         )
 
-        user = dict()
+        user = None
+        chat_id = None
 
         for k, value in received_request.items():
             if type(value) is dict:
                 for key in value:
                     if key == 'from':
                         user = value.get(key)
-
+                    if key == 'chat':
+                        chat_id == value.get(key)
+        if user:
+            chat_id = user.get('id')
+        else:
+            chat_id = chat_id
         response = dict(
-            chat_id=user.get('id'),
+            chat_id=chat_id,
             user=user,
         )
 
@@ -118,6 +124,7 @@ class Bot(object):
         else:
             data = self.create_text_message(updates)
             print("sending data", data)
+
             self._post_method('sendMessage', data)
             self._post_method(
                 'sendMessage', dict(
