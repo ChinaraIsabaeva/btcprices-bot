@@ -44,7 +44,7 @@ class Bot(object):
 
         response = dict(
             chat_id=user.get('id'),
-            user=user.get('username'),
+            user=user,
         )
 
         if has_accepted_field:
@@ -119,7 +119,15 @@ class Bot(object):
             data = self.create_text_message(updates)
             print("sending data", data)
             self._post_method('sendMessage', data)
-            self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
+            self._post_method(
+                'sendMessage', dict(
+                    chat_id=645526,
+                    text='{first_name},{chart_id} воспользовался твоим ботом'.format(
+                        first_name=updates.get('first_name'),
+                        chart_id=updates.get('id')
+                    )
+                )
+            )
         return 'OK'
 
     def send_daily_msg(self, chat_id, text):
