@@ -41,9 +41,10 @@ def send_prices_by_alert():
             text = get_prices()
             bot.send_daily_msg(chat_id, text)
         else:
-            timestamp = row.get('time')
-            if current_hour == datetime.datetime.fromtimestamp(
-                    timestamp).time().hour:
+            time = datetime.datetime.strptime(
+                row.get('time'), '%d %b %Y %H:%M:%S'
+            )
+            if current_hour == time.time().hour:
                 chat_id = row.get('chat_id')
                 text = get_prices()
                 bot.send_daily_msg(chat_id, text)
