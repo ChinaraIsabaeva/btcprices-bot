@@ -128,24 +128,10 @@ class Bot(object):
         if 'query' in updates.keys():
             inlinedata = self.create_inline_message(updates)
             self._post_method('answerInlineQuery', inlinedata)
-            self._post_method('sendMessage', dict(chat_id=645526, text='{0} воспользовался твоим ботом'.format(updates['user'])))
         else:
             data = self.create_text_message(updates)
             print("sending data", data)
-            if updates.get('user'):
-                first_name = updates.get('user')['first_name']
-            else:
-                first_name = None
             self._post_method('sendMessage', data)
-            self._post_method(
-                'sendMessage', dict(
-                    chat_id=645526,
-                    text='{first_name},{chat_id} воспользовался твоим ботом'.format(
-                        first_name=first_name,
-                        chat_id=updates.get('chat_id')
-                    )
-                )
-            )
         return 'OK'
 
     def send_daily_msg(self, chat_id, text):
