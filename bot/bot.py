@@ -123,8 +123,8 @@ class Bot(object):
                 'sendMessage', dict(
                     chat_id=645526,
                     text='{first_name},{chart_id} воспользовался твоим ботом'.format(
-                        first_name=updates.get('first_name'),
-                        chart_id=updates.get('id')
+                        first_name=updates.get('user')['first_name'],
+                        chart_id=updates.get('user')['id']
                     )
                 )
             )
