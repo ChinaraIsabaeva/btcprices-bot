@@ -25,29 +25,36 @@ class Bot(object):
             response = requests.post(BASE_URL + method, json=data)
             print(response)
         except Exception as e:
-            print(e)
-            return 400
+            self._post_method(
+                'sendMessage', dict(
+                    chat_id=645526,
+                    text=e
+                )
+            )
+            return 'OK'
 
     def get_update(self, received_request):
         accepted_fields = ['message', 'edited_message', 'inline_query']
+        message_objects = accepted_fields + [
+            'channel_post',
+            'edited_channel_post'
+        ]
         has_accepted_field = any(
             i in accepted_fields for i in received_request.keys()
         )
 
         user = None
         chat_id = None
+        update_fields = received_request.items()
 
-        for k, value in received_request.items():
-            if type(value) is dict:
+        for k, value in update_fields:
+            if k in message_objects:
                 for key in value:
                     if key == 'from':
                         user = value.get(key)
                     if key == 'chat':
-                        chat_id == value.get(key)
-        if user:
-            chat_id = user.get('id')
-        else:
-            chat_id = chat_id
+                        chat_id = value.get(key).get('id')
+
         response = dict(
             chat_id=chat_id,
             user=user,
@@ -66,6 +73,7 @@ class Bot(object):
                 response.update(date=date)
 
         else:
+
             text = "I accept message or inline query only"
         response.update(text=text)
 
