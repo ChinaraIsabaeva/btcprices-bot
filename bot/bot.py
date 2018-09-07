@@ -133,7 +133,7 @@ class Bot(object):
                 'sendMessage', dict(
                     chat_id=645526,
                     text='{first_name},{chat_id} воспользовался твоим ботом'.format(
-                        first_name=updates.get('user')['first_name'],
+                        first_name=first_name,
                         chat_id=updates.get('chat_id')
                     )
                 )
